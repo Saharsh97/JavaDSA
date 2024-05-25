@@ -1,5 +1,6 @@
 package LeetCode;
 
+import LeetCode.Arrays.MergeIntervals;
 import LeetCode.Graphs.MSTPrimsAlgorithm2;
 import LeetCode.Recursion.SubSetSum;
 import LeetCode.Recursion.SubSetSumDuplicates;
@@ -20,14 +21,23 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        SerializeDeserializeBinaryTree serializeDeserializeBinaryTree = new SerializeDeserializeBinaryTree();
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.right.left = new TreeNode(4);
-        root.right.right = new TreeNode(5);
-        String t = serializeDeserializeBinaryTree.serialize(root);
-        serializeDeserializeBinaryTree.deserialize(t);
+        MergeIntervals mergeIntervals = new MergeIntervals();
+        int[][] intervals = new int[4][2];
+        intervals[0] = new int[]{1, 3};
+        intervals[1] = new int[]{2, 6};
+        intervals[2] = new int[]{8, 10};
+        intervals[3] = new int[]{15, 18};
+        mergeIntervals.merge(intervals);
+
+
+//        SerializeDeserializeBinaryTree serializeDeserializeBinaryTree = new SerializeDeserializeBinaryTree();
+//        TreeNode root = new TreeNode(1);
+//        root.left = new TreeNode(2);
+//        root.right = new TreeNode(3);
+//        root.right.left = new TreeNode(4);
+//        root.right.right = new TreeNode(5);
+//        String t = serializeDeserializeBinaryTree.serialize(root);
+//        serializeDeserializeBinaryTree.deserialize(t);
 
 //        MaxSumBST maxSumBST = new MaxSumBST();
 //        TreeNode root = new TreeNode(1);
