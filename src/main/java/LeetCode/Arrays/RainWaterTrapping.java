@@ -20,4 +20,26 @@ public class RainWaterTrapping {
         }
         return sum;
     }
+
+//    public int trap(int[] A) {
+//        int n = A.length;
+//        int sum = 0;
+//        int l = 0;
+//        int r = n-1;
+//        int lMax = A[l];
+//        int rMax = A[r];
+//        int i = 0;
+//        while(l <= r){
+//            sum += Math.min(lMax, rMax) - A[i];
+//            i++;
+//            if(lMax < r){
+//                l++;
+//                lMax = Math.max(lMax, A[l]);
+//            } else {
+//                r--;
+//                rMax = Math.max(rMax, A[r]);
+//            }
+//        }
+//        return sum;
+//    }
 }
