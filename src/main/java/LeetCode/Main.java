@@ -1,6 +1,8 @@
 package LeetCode;
 
 import LeetCode.Arrays.MergeIntervals;
+import LeetCode.DynamicProgramming.Knapsack;
+import LeetCode.DynamicProgramming.MatrixChainMultiplication;
 import LeetCode.Graphs.*;
 import LeetCode.Recursion.MGraphColoring;
 import LeetCode.Recursion.NQueens;
@@ -24,13 +26,19 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        BridgesInGraph bridgesInGraph = new BridgesInGraph();
-        List<List<Integer>> connections = new ArrayList<>();
-        connections.add(List.of(0, 1));
-        connections.add(List.of(1, 2));
-        connections.add(List.of(2, 0));
-        connections.add(List.of(1, 3));
-        bridgesInGraph.criticalConnections(4, connections);
+        Knapsack knapsack = new Knapsack();
+        System.out.println(knapsack.knapSack(4, new int[]{4, 5, 1}, new int[]{1, 2, 3}, 3));
+
+//        MatrixChainMultiplication matrixChainMultiplication = new MatrixChainMultiplication();
+//        System.out.println(matrixChainMultiplication.matrixMultiplication(5, new int[]{40, 20, 30, 10, 30}));
+
+//        BridgesInGraph bridgesInGraph = new BridgesInGraph();
+//        List<List<Integer>> connections = new ArrayList<>();
+//        connections.add(List.of(0, 1));
+//        connections.add(List.of(1, 2));
+//        connections.add(List.of(2, 0));
+//        connections.add(List.of(1, 3));
+//        bridgesInGraph.criticalConnections(4, connections);
 
 //        StronglyConnectedComponents stronglyConnectedComponents = new StronglyConnectedComponents();
 //        List<List<Integer>> adj = new ArrayList<>();
