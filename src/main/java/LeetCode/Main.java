@@ -1,7 +1,9 @@
 package LeetCode;
 
 import LeetCode.Arrays.MergeIntervals;
-import LeetCode.Graphs.MSTPrimsAlgorithm2;
+import LeetCode.Graphs.*;
+import LeetCode.Recursion.MGraphColoring;
+import LeetCode.Recursion.NQueens;
 import LeetCode.Recursion.SubSetSum;
 import LeetCode.Recursion.SubSetSumDuplicates;
 import LeetCode.StacksAndQueues.CelebrityProblem;
@@ -16,18 +18,76 @@ import LeetCode.Tree.SerializeDeserializeBinaryTree;
 //import LeetCode.Tree.PredecessorAndSuccessor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        MergeIntervals mergeIntervals = new MergeIntervals();
-        int[][] intervals = new int[4][2];
-        intervals[0] = new int[]{1, 3};
-        intervals[1] = new int[]{2, 6};
-        intervals[2] = new int[]{8, 10};
-        intervals[3] = new int[]{15, 18};
-        mergeIntervals.merge(intervals);
+        BridgesInGraph bridgesInGraph = new BridgesInGraph();
+        List<List<Integer>> connections = new ArrayList<>();
+        connections.add(List.of(0, 1));
+        connections.add(List.of(1, 2));
+        connections.add(List.of(2, 0));
+        connections.add(List.of(1, 3));
+        bridgesInGraph.criticalConnections(4, connections);
+
+//        StronglyConnectedComponents stronglyConnectedComponents = new StronglyConnectedComponents();
+//        List<List<Integer>> adj = new ArrayList<>();
+//        adj.add(List.of(2, 3));
+//        adj.add(List.of(0));
+//        adj.add(List.of(1));
+//        adj.add(List.of(4));
+//        adj.add(List.of());
+//        stronglyConnectedComponents.kosaraju(5, adj);
+
+
+
+//        MSTPrimsAlgorithm mstPrimsAlgorithm = new MSTPrimsAlgorithm();
+//        int[][] coordinates = new int[5][2];
+//        coordinates[0] = new int[]{0, 0};
+//        coordinates[1] = new int[]{2, 2};
+//        coordinates[2] = new int[]{3, 10};
+//        coordinates[3] = new int[]{5, 2};
+//        coordinates[4] = new int[]{7, 0};
+//        System.out.println(MSTPrimsAlgorithm.minCostConnectPoints(coordinates));
+
+//        Dijkstra dijkstra = new Dijkstra();
+//        int[][] edges = new int[3][3];
+//        edges[0] = new int[]{2, 1, 1};
+//        edges[1] = new int[]{2, 3, 1};
+//        edges[2] = new int[]{3, 4, 1};
+//        dijkstra.networkDelayTime(edges, 4, 2);
+
+//        MGraphColoring mGraphColoring = new MGraphColoring();
+//        boolean[][] graph = new boolean[5][5];
+//        graph[0][4] = true;
+//        graph[2][4] = true;
+//        graph[3][4] = true;
+//        graph[4][0] = true;
+//        graph[4][2] = true;
+//        graph[4][3] = true;
+//        mGraphColoring.graphColoring(graph, 1, 4);
+
+//        boolean[][] graph = new boolean[4][4];
+//        graph[0] = new boolean[]{false, true, true, true};
+//        graph[1] = new boolean[]{true, false, true, false};
+//        graph[2] = new boolean[]{true, true, false, true};
+//        graph[3] = new boolean[]{true, false, true, false};
+//        mGraphColoring.graphColoring(graph, 3, 4);
+
+
+//        NQueens nQueens = new NQueens();
+//        System.out.println(nQueens.solveNQueens(4));
+
+
+//        MergeIntervals mergeIntervals = new MergeIntervals();
+//        int[][] intervals = new int[4][2];
+//        intervals[0] = new int[]{1, 3};
+//        intervals[1] = new int[]{2, 6};
+//        intervals[2] = new int[]{8, 10};
+//        intervals[3] = new int[]{15, 18};
+//        mergeIntervals.merge(intervals);
 
 
 //        SerializeDeserializeBinaryTree serializeDeserializeBinaryTree = new SerializeDeserializeBinaryTree();
