@@ -1,4 +1,4 @@
-package LeetCode.AhoCorasick;
+package AhoCorasick;
 
 import java.util.HashMap;
 import java.util.LinkedList;
