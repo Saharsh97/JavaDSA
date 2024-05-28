@@ -4,14 +4,14 @@ import LeetCode.Arrays.MergeIntervals;
 import LeetCode.DynamicProgramming.Knapsack;
 import LeetCode.DynamicProgramming.MatrixChainMultiplication;
 import LeetCode.Graphs.*;
-import LeetCode.Recursion.MGraphColoring;
-import LeetCode.Recursion.NQueens;
-import LeetCode.Recursion.SubSetSum;
-import LeetCode.Recursion.SubSetSumDuplicates;
+import LeetCode.Recursion.*;
 import LeetCode.StacksAndQueues.CelebrityProblem;
 //import LeetCode.StacksAndQueues.LFUCache;
+import LeetCode.StacksAndQueues.MaxOfMinOfEveryWindow;
 import LeetCode.StacksAndQueues.MinStack;
 import LeetCode.StacksAndQueues.SlidingWindowMaximum;
+import LeetCode.Strings.CountAndSay;
+import LeetCode.Strings.RepeatedStringMatch;
 import LeetCode.Tree.CreateBSTFromPreOrder;
 import LeetCode.Tree.CreateTreeFromPreOrderAndInOrderTraversal;
 import LeetCode.Tree.MaxSumBST;
@@ -26,8 +26,35 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Knapsack knapsack = new Knapsack();
-        System.out.println(knapsack.knapSack(4, new int[]{4, 5, 1}, new int[]{1, 2, 3}, 3));
+        RepeatedStringMatch repeatedStringMatch = new RepeatedStringMatch();
+        repeatedStringMatch.repeatedStringMatch("abcd", "cdabcdab");
+
+//        SudokuSolver sudokuSolver = new SudokuSolver();
+//        char[][] board = {
+//                {'5','3','.','.','7','.','.','.','.'},
+//                {'6','.','.','1','9','5','.','.','.'},
+//                {'.','9','8','.','.','.','.','6','.'},
+//                {'8','.','.','.','6','.','.','.','3'},
+//                {'4','.','.','8','.','3','.','.','1'},
+//                {'7','.','.','.','2','.','.','.','6'},
+//                {'.','6','.','.','.','.','2','8','.'},
+//                {'.','.','.','4','1','9','.','.','5'},
+//                {'.','.','.','.','8','.','.','7','9'}
+//        };
+//        sudokuSolver.solveSudoku(board);
+//        System.out.println();
+
+
+//        MaxOfMinOfEveryWindow maxOfMinOfEveryWindow = new MaxOfMinOfEveryWindow();
+//        System.out.println(maxOfMinOfEveryWindow.maxMinWindow(new int[]{3, 7, 5, 6, 1, 8, 4, 2, 10}, 9));
+//        System.out.println(maxOfMinOfEveryWindow.maxMinWindow(new int[]{45, -2, 42, 5, -11}, 5));
+//        System.out.println(maxOfMinOfEveryWindow.maxMinWindow(new int[]{-2, 12, -1, 1, 20, 1}, 6));
+
+//        CountAndSay countAndSay = new CountAndSay();
+//        countAndSay.countAndSay(5);
+
+//        Knapsack knapsack = new Knapsack();
+//        System.out.println(knapsack.knapSack(4, new int[]{4, 5, 1}, new int[]{1, 2, 3}, 3));
 
 //        MatrixChainMultiplication matrixChainMultiplication = new MatrixChainMultiplication();
 //        System.out.println(matrixChainMultiplication.matrixMultiplication(5, new int[]{40, 20, 30, 10, 30}));

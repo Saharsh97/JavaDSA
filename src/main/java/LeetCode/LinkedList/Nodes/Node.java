@@ -2,12 +2,14 @@ package LeetCode.LinkedList.Nodes;
 
 public class Node {
     public int data;
-    public  Node next;
-    public  Node bottom;
+    public Node next;
+    public Node bottom;
+    public Node random;
 
-    Node(int d) {
+    public Node(int d) {
         data = d;
         next = null;
         bottom = null;
+        random = null;
     }
 }
