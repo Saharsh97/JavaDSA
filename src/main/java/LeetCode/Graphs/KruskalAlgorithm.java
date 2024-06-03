@@ -2,6 +2,9 @@ package LeetCode.Graphs;
 
 import java.util.*;
 
+// both Prims and Kruskal depend on Edges.
+// in Prims, use PQ to take least edges.
+// in Kruskals, sort the edges once by weight.
 public class KruskalAlgorithm {
     class Edge{
         int u;

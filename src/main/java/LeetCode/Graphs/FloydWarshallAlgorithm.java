@@ -1,9 +1,12 @@
 package LeetCode.Graphs;
 
+// All pairs shortest path.
+// also works with negative cycles.
 public class FloydWarshallAlgorithm {
     public void shortestDistance(int[][] M) {
         int n = M.length;
 
+        // for all intermediate node k, for all combinations of i and j.
         for(int k = 0; k < n; k++){
             for(int i = 0; i < n; i++){
                 for(int j = 0; j < n; j++){

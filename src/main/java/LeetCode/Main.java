@@ -1,6 +1,10 @@
 package LeetCode;
 
 import LeetCode.Arrays.MergeIntervals;
+import LeetCode.Arrays.NonDecreasingArray;
+import LeetCode.Arrays.RemoveDuplicatesSortedArray;
+import LeetCode.Arrays.TripletsXOR;
+//import LeetCode.BitManipulation.ReverseBits;
 import LeetCode.DynamicProgramming.Knapsack;
 import LeetCode.DynamicProgramming.MatrixChainMultiplication;
 import LeetCode.Graphs.*;
@@ -11,6 +15,8 @@ import LeetCode.StacksAndQueues.MaxOfMinOfEveryWindow;
 import LeetCode.StacksAndQueues.MinStack;
 import LeetCode.StacksAndQueues.SlidingWindowMaximum;
 import LeetCode.Strings.CountAndSay;
+import LeetCode.Strings.KMP;
+import LeetCode.Strings.MinimumCharactersRequiredForPalindrome;
 import LeetCode.Strings.RepeatedStringMatch;
 import LeetCode.Tree.CreateBSTFromPreOrder;
 import LeetCode.Tree.CreateTreeFromPreOrderAndInOrderTraversal;
@@ -26,8 +32,38 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        RepeatedStringMatch repeatedStringMatch = new RepeatedStringMatch();
-        repeatedStringMatch.repeatedStringMatch("abcd", "cdabcdab");
+        MinimumCharactersRequiredForPalindrome minimumCharactersRequiredForPalindrome = new MinimumCharactersRequiredForPalindrome();
+        System.out.println(minimumCharactersRequiredForPalindrome.solve("AACECAAAA"));
+//        System.out.println(minimumCharactersRequiredForPalindrome.solve("ABC"));
+//        System.out.println(minimumCharactersRequiredForPalindrome.solve("ABA"));
+//        System.out.println(minimumCharactersRequiredForPalindrome.solve("ABAAA"));
+
+
+
+//        KMP kmp = new KMP();
+//        System.out.println(kmp.strStr("badonitonionspl", "onions"));
+
+
+//        RemoveDuplicatesSortedArray removeDuplicatesSortedArray = new RemoveDuplicatesSortedArray();
+//        System.out.println(removeDuplicatesSortedArray.removeDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4}));
+
+//        ReverseBits reverseBits = new ReverseBits();
+//        System.out.println(reverseBits.reverseBits(10));
+
+
+//        NonDecreasingArray nonDecreasingArray = new NonDecreasingArray();
+//        System.out.println(nonDecreasingArray.checkPossibility(new int[]{4, 2, 3}));
+//        System.out.println(nonDecreasingArray.checkPossibility(new int[]{1, 5, 4, 6, 7, 10, 8, 9}));
+
+
+//        TripletsXOR tripletsXOR = new TripletsXOR();
+//        tripletsXOR.countTriplets(new int[]{2,3,1,6,7});
+//        tripletsXOR.countTriplets(new int[]{1, 1, 1, 1, 1});
+
+
+
+//        RepeatedStringMatch repeatedStringMatch = new RepeatedStringMatch();
+//        repeatedStringMatch.repeatedStringMatch("abcd", "cdabcdab");
 
 //        SudokuSolver sudokuSolver = new SudokuSolver();
 //        char[][] board = {

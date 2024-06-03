@@ -26,8 +26,10 @@ public class StronglyConnectedComponents {
         while(!stack.isEmpty()){
             int u = stack.pop();
             List<Integer> path = new ArrayList<>();
-            dfs(u, visited, path, reverseGraph);
-            if(!path.isEmpty()) allSCCs.add(path);
+            if(!visited[u]) {
+                dfs(u, visited, path, reverseGraph);
+                allSCCs.add(path);
+            }
         }
         return allSCCs.size();
     }
@@ -37,6 +39,7 @@ public class StronglyConnectedComponents {
         visited[u] = true;
         for(Integer v: adj.get(u))
             dfsFillStack(v, stack, visited, adj);
+        // after visiting all the nodes, then push to stack.
         stack.push(u);
     }
 
