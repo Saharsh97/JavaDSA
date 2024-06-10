@@ -1,23 +1,21 @@
 package LeetCode;
 
-import LeetCode.Arrays.MergeIntervals;
-import LeetCode.Arrays.NonDecreasingArray;
-import LeetCode.Arrays.RemoveDuplicatesSortedArray;
-import LeetCode.Arrays.TripletsXOR;
+import LeetCode.Arrays.*;
 //import LeetCode.BitManipulation.ReverseBits;
+import LeetCode.DynamicProgramming.HappyNumber;
 import LeetCode.DynamicProgramming.Knapsack;
 import LeetCode.DynamicProgramming.MatrixChainMultiplication;
+import LeetCode.DynamicProgramming.WordBreak;
 import LeetCode.Graphs.*;
 import LeetCode.Recursion.*;
+import LeetCode.RodCuttingProblem;
+import LeetCode.SlidingWindow.SubstringWithConcatenationOfAllWords;
 import LeetCode.StacksAndQueues.CelebrityProblem;
 //import LeetCode.StacksAndQueues.LFUCache;
 import LeetCode.StacksAndQueues.MaxOfMinOfEveryWindow;
 import LeetCode.StacksAndQueues.MinStack;
 import LeetCode.StacksAndQueues.SlidingWindowMaximum;
-import LeetCode.Strings.CountAndSay;
-import LeetCode.Strings.KMP;
-import LeetCode.Strings.MinimumCharactersRequiredForPalindrome;
-import LeetCode.Strings.RepeatedStringMatch;
+import LeetCode.Strings.*;
 import LeetCode.Tree.CreateBSTFromPreOrder;
 import LeetCode.Tree.CreateTreeFromPreOrderAndInOrderTraversal;
 import LeetCode.Tree.MaxSumBST;
@@ -32,8 +30,40 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        MinimumCharactersRequiredForPalindrome minimumCharactersRequiredForPalindrome = new MinimumCharactersRequiredForPalindrome();
-        System.out.println(minimumCharactersRequiredForPalindrome.solve("AACECAAAA"));
+        SubarraySumDivisibleByK subarraySumDivisibleByK = new SubarraySumDivisibleByK();
+        System.out.println(subarraySumDivisibleByK.subarraysDivByK(new int[]{-5}, 5));
+
+
+
+//        BuySellStock4 buySellStock4 = new BuySellStock4();
+//        buySellStock4.maxProfit(2, new int[]{3,2,6,5,0,3});
+
+
+//        HappyNumber happyNumber = new HappyNumber();
+//        System.out.println(happyNumber.isHappy(2));
+
+//        WordPattern wordPattern = new WordPattern();
+//        System.out.println(wordPattern.wordPattern("abba", "cat dog dog cat"));
+
+
+//        SubstringWithConcatenationOfAllWords substringWithConcatenationOfAllWords = new SubstringWithConcatenationOfAllWords();
+//        System.out.println(substringWithConcatenationOfAllWords.findSubstring("barfoofoobarthefoobarman", new String[]{"bar","foo","the"}));
+
+
+//        IntegerToRoman integerToRoman = new IntegerToRoman();
+//        System.out.println(integerToRoman.intToRoman(58));
+
+//        RodCuttingProblem rodCuttingProblem = new RodCuttingProblem();
+//        rodCuttingProblem.minCost(7, new int[]{1, 3, 4, 5});
+
+
+//        WordBreak wordBreak = new WordBreak();
+//        System.out.println(wordBreak.wordBreak("leetcode", List.of("leet", "code")));
+
+
+
+//        MinimumCharactersRequiredForPalindrome minimumCharactersRequiredForPalindrome = new MinimumCharactersRequiredForPalindrome();
+//        System.out.println(minimumCharactersRequiredForPalindrome.solve("AACECAAAA"));
 //        System.out.println(minimumCharactersRequiredForPalindrome.solve("ABC"));
 //        System.out.println(minimumCharactersRequiredForPalindrome.solve("ABA"));
 //        System.out.println(minimumCharactersRequiredForPalindrome.solve("ABAAA"));

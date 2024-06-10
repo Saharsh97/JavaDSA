@@ -1,16 +1,41 @@
-//package LeetCode;
-//
-//import java.util.*;
-//import java.util.stream.Collectors;
-//
-//public class RodCuttingProblem {
-//
-//    public int minCost(int n, int[] cuts) {
-//        Arrays.sort(cuts);
-//        Map<String, Integer> dp = new HashMap<>();
-//        return minCut(0, n, cuts, dp);
-//    }
-//
+package LeetCode;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class RodCuttingProblem {
+
+    public int minCost(int n, int[] cuts) {
+        Arrays.sort(cuts);
+        Integer[][] dp = new Integer[n+1][n+1];
+        return recur(0, n, 0, cuts.length-1, cuts, dp);
+    }
+
+    private int recur(int st, int en, int cutsSt, int cutsEn, int[] cuts, Integer[][] dp){
+        if(cutsSt > cutsEn){
+            return 0;
+        }
+        if(st >= en){
+            return 0;
+        }
+        int length = en - st;
+        if(cutsSt == cutsEn){
+            return length;
+        }
+        if(dp[st][en] != null){
+            return dp[st][en];
+        }
+        int minCost = Integer.MAX_VALUE;
+        for(int i = cutsSt; i <= cutsEn; i++){
+            int leftCost = recur(st, cuts[i], cutsSt, i-1, cuts, dp);
+            int rightCost = recur(cuts[i], en, i+1, cutsEn, cuts, dp);
+            minCost = Math.min(minCost, leftCost + rightCost);
+        }
+        minCost = minCost == Integer.MAX_VALUE ? 0 : minCost + length;
+        dp[st][en] = minCost;
+        return minCost;
+    }
+
 //    private int minCut(int L, int R, int[] cuts, Map<String, Integer> dp){
 //        if(dp.containsKey(L+"|"+R)){
 //            return dp.get(L+"|"+R);
@@ -33,4 +58,4 @@
 //        dp.put(L+"|"+R, result);
 //        return result;
 //    }
-//}
+}

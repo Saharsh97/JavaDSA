@@ -1,20 +1,12 @@
 package LeetCode.Arrays;
 
+import LeetCode.Arrays.Structs.Interval;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class MergeIntervals {
-
-    class Interval{
-        Integer start;
-        Integer end;
-
-        public Interval(Integer start, Integer end) {
-            this.start = start;
-            this.end = end;
-        }
-    }
 
     public int[][] merge(int[][] A) {
         int n = A.length;
