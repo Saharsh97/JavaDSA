@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Queue;
 
 public class AhoCorasick {
-    class TrieNode{
+    class TrieNode {
         Character character;
         Map<Character, TrieNode> children;
         TrieNode suffixLink;
@@ -22,8 +22,8 @@ public class AhoCorasick {
         }
     }
 
-    public void generateTrie(TrieNode root, String[] patterns){
-        for(int i = 0; i < patterns.length; i++) {
+    public void generateTrie(TrieNode root, String[] patterns) {
+        for (int i = 0; i < patterns.length; i++) {
             // add this word to Trie.
             TrieNode current = root;
             for (Character c : patterns[i].toCharArray()) {
@@ -36,28 +36,28 @@ public class AhoCorasick {
         }
     }
 
-    public void generateSuffixLinksAndOutputLinks(TrieNode root){
+    public void generateSuffixLinksAndOutputLinks(TrieNode root) {
         root.suffixLink = root;
         Queue<TrieNode> bfsQueue = new LinkedList<>(); // for BFS Traversal
 
-        for(Character character: root.children.keySet()){
+        for (Character character : root.children.keySet()) {
             root.children.get(character).suffixLink = root;
             bfsQueue.add(root.children.get(character));
         }
 
-        while(!bfsQueue.isEmpty()){
+        while (!bfsQueue.isEmpty()) {
             TrieNode currentNode = bfsQueue.poll();
 
             // setting suffix link
-            for(Character character: currentNode.children.keySet()){
+            for (Character character : currentNode.children.keySet()) {
                 TrieNode childNode = currentNode.children.get(character);
                 TrieNode parentSuffixLink = currentNode.suffixLink; // for this child node, its parent suffixlink. // parentSuffixLink = root for depth 1.
 
-                while(!parentSuffixLink.children.containsKey(character) && parentSuffixLink != root){
+                while (!parentSuffixLink.children.containsKey(character) && parentSuffixLink != root) {
                     parentSuffixLink = parentSuffixLink.suffixLink;
                 }
 
-                if(parentSuffixLink.children.containsKey(character)){
+                if (parentSuffixLink.children.containsKey(character)) {
                     childNode.suffixLink = parentSuffixLink.children.get(character);
                 } else {
                     childNode.suffixLink = root;
@@ -67,13 +67,11 @@ public class AhoCorasick {
 
 
             // setting output link
-            if(currentNode.suffixLink.wordIndex >= 0){
+            if (currentNode.suffixLink.wordIndex >= 0) {
                 currentNode.outputLink = currentNode.suffixLink;
             } else {
                 currentNode.outputLink = currentNode.suffixLink.outputLink;
             }
         }
     }
-
-
 }
