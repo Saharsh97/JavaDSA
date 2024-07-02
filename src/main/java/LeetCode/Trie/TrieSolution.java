@@ -27,6 +27,7 @@ public class TrieSolution {
         temp.isLeafNode = true;
     }
 
+    // every prefix should be a valid word
     public boolean checkCompletePrefix(TrieNode root, String word){
         TrieNode temp = root;
         for(Character c: word.toCharArray()){

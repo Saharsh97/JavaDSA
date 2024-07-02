@@ -2,36 +2,15 @@ package LeetCode;
 
 import LeetCode.Arrays.*;
 //import LeetCode.BitManipulation.ReverseBits;
-import LeetCode.DynamicProgramming.HappyNumber;
-import LeetCode.DynamicProgramming.Knapsack;
-import LeetCode.DynamicProgramming.MatrixChainMultiplication;
-import LeetCode.DynamicProgramming.WordBreak;
-import LeetCode.Graphs.*;
-import LeetCode.Recursion.*;
-import LeetCode.RodCuttingProblem;
-import LeetCode.SlidingWindow.SubstringWithConcatenationOfAllWords;
-import LeetCode.StacksAndQueues.CelebrityProblem;
 //import LeetCode.StacksAndQueues.LFUCache;
-import LeetCode.StacksAndQueues.MaxOfMinOfEveryWindow;
-import LeetCode.StacksAndQueues.MinStack;
-import LeetCode.StacksAndQueues.SlidingWindowMaximum;
-import LeetCode.Strings.*;
-import LeetCode.Tree.CreateBSTFromPreOrder;
-import LeetCode.Tree.CreateTreeFromPreOrderAndInOrderTraversal;
-import LeetCode.Tree.MaxSumBST;
-import LeetCode.Tree.Nodes.TreeNode;
-import LeetCode.Tree.SerializeDeserializeBinaryTree;
 //import LeetCode.Tree.PredecessorAndSuccessor;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        SubarraySumDivisibleByK subarraySumDivisibleByK = new SubarraySumDivisibleByK();
-        System.out.println(subarraySumDivisibleByK.subarraysDivByK(new int[]{-5}, 5));
+        A_SubarraySumDivisibleByK ASubarraySumDivisibleByK = new A_SubarraySumDivisibleByK();
+        System.out.println(ASubarraySumDivisibleByK.subarraysDivByK(new int[]{-5}, 5));
 
 
 

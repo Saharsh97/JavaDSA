@@ -15,6 +15,7 @@ public class BSTIterator {
 
     public void update(TreeNode root){
         if(root == null) return;
+
         TreeNode temp = root;
         stack.push(temp);
         while(temp.left != null) {

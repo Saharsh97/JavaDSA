@@ -40,7 +40,7 @@ public class InsertInterval {
         int n = intervals.length;
         int start = Math.min(intervals[i][0], newInterval[0]);
         while(i < n && intervals[i][0] <= newInterval[1]) i++;
-        i--; // points to the last matching interval.
+        i--; // now i points to the last matching interval.
         int end = Math.max(intervals[i][1], newInterval[1]);
         result.add(new Interval(start, end));
         return i+1;

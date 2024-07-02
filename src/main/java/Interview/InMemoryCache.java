@@ -14,6 +14,7 @@ minPQ: 1,1,
 
 */
 
+// refer to Caching LLD in another code.
 public class InMemoryCache {
 
     interface Cache{

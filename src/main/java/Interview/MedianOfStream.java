@@ -34,16 +34,13 @@ public class MedianOfStream {
 
     public static List<Integer> runningMedian(List<Integer> A) {
         int n = A.size();
-        // if(n == 1){
-        //     return List.of(A.get(0));
-        // }
-        PriorityQueue<Integer> maxPQ = new PriorityQueue<>(new Comparator<Integer>(){
+        PriorityQueue<Integer> leftPQ = new PriorityQueue<>(new Comparator<Integer>(){
             @Override
             public int compare(Integer a, Integer b){
                 return b - a;
             }
         });
-        PriorityQueue<Integer> minPQ = new PriorityQueue<>(new Comparator<Integer>(){
+        PriorityQueue<Integer> rightPQ = new PriorityQueue<>(new Comparator<Integer>(){
             @Override
             public int compare(Integer a, Integer b){
                 return a - b;
@@ -52,48 +49,51 @@ public class MedianOfStream {
 
         List<Integer> result = new ArrayList<>();
 
+        // n == 1
         result.add(A.get(0));
         if(n == 1){
             return result;
         }
 
+        // n == 2
         int min = A.get(0) < A.get(1) ? A.get(0) : A.get(1);
         int max = A.get(0) > A.get(1) ? A.get(0) : A.get(1);
-        maxPQ.add(min);
-        minPQ.add(max);
-        result.add(maxPQ.peek());
+        leftPQ.add(min);
+        rightPQ.add(max);
+        result.add(leftPQ.peek());
 
+        // n > 2
         for(int i = 2; i < n; i++){
             if((i+1) % 2 != 0) {
-                result.add(handleOddNumbers(maxPQ, minPQ, A.get(i)));
+                result.add(handleOddNumbersInPQs(leftPQ, rightPQ, A.get(i)));
             } else {
-                result.add(handleEvenNumbers(maxPQ, minPQ, A.get(i)));
+                result.add(handleEvenNumbersInPQs(leftPQ, rightPQ, A.get(i)));
             }
         }
 
         return result;
     }
 
-    private static int handleOddNumbers(PriorityQueue<Integer> maxPQ, PriorityQueue<Integer> minPQ, int num){
-        if(num < minPQ.peek()){
-            maxPQ.add(num);
+    private static int handleOddNumbersInPQs(PriorityQueue<Integer> leftPQ, PriorityQueue<Integer> rightPQ, int num){
+        if(num < rightPQ.peek()){
+            leftPQ.add(num);
         } else {
-            int x = minPQ.poll();
-            maxPQ.add(x);
-            minPQ.add(num);
+            int x = rightPQ.poll();
+            leftPQ.add(x);
+            rightPQ.add(num);
         }
-        return maxPQ.peek();
+        return leftPQ.peek();
     }
 
-    private static int handleEvenNumbers(PriorityQueue<Integer> maxPQ, PriorityQueue<Integer> minPQ, int num){
-        if(maxPQ.peek() < num){
-            minPQ.add(num);
+    private static int handleEvenNumbersInPQs(PriorityQueue<Integer> leftPQ, PriorityQueue<Integer> rightPQ, int num){
+        if(leftPQ.peek() < num){
+            rightPQ.add(num);
         } else {
-            int x = maxPQ.poll();
-            minPQ.add(x);
-            maxPQ.add(num);
+            int x = leftPQ.poll();
+            rightPQ.add(x);
+            leftPQ.add(num);
         }
-        return maxPQ.peek();
+        return leftPQ.peek();
     }
 
 }

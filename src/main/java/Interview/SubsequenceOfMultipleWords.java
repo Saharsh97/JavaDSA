@@ -32,17 +32,14 @@ public class SubsequenceOfMultipleWords {
         String answer = "";
         for(String word: dictionary){
             if(isSubsequence(word, s)){
-                if(answer.isEmpty()){
-                    answer = word;
-                } else {
-                    answer = compareWords(answer, word);
-                }
+                answer = compareWords(answer, word);
             }
         }
         return answer.isEmpty() ? "-1" : answer;
     }
 
     private static String compareWords(String word, String text){
+        if(word.isEmpty()) return text;
         int p = 0;
         int q = 0;
         while(p < word.length() && q < text.length()){
